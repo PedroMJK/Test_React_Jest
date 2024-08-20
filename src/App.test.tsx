@@ -33,7 +33,18 @@ describe("App Component", () => {
 
     // testa a nova mensagem depois de renderizada.
     screen.getByText(/new message/i);
-   })
+
+    // Testar se a mensagem passada está no elemento    
+    const oldMessage = screen.queryByText("Let's learn more about testing in React");
+
+    // Para garantir que a message passada não estar no elemento
+    expect(oldMessage).toBeNull();
+   });
+
+
+
+   
+   
 });
 
 export default {};
