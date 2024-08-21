@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Button from "./Button";
+import Button from "../Button";
 import axios from "axios"; 
 
 interface Task {
-    id: string;
-    title: string;
+    id: string,
+    title: string,
 }
 
 const Tasks = () => {
@@ -12,7 +12,7 @@ const Tasks = () => {
     
     const handleClick = async () => {
         const { data } = await axios.get(
-            "https://jsonplaceholder.typicode.com/todos?_limit=10"
+            "https://jsonplaceholder.typicode.com/todos?_limit-10"
         );
 
         setTasks(data);
@@ -25,9 +25,9 @@ const Tasks = () => {
                 Get Tasks from API
             </Button>
 
-            {tasks.map((task) => (
+            {tasks.map((task) => {
                 <p id={task.id}>{task.title}</p>
-            ))}
+            })}
         </>
     )
 
