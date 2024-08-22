@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import Tasks from "./Teste_Integracao/Tasks";
+import Tasks from "./components/Tasks";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
